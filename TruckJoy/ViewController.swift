@@ -12,9 +12,11 @@ import CoreAudioKit
 
 
 private let maxJoystickValue = (1 << 12) - 1     // 4095
+private let midJoystickValue = (maxJoystickValue + 1) / 2
 private let totalRotationalRangeInPi = 5
 private let joystickValuePerRotation = 2 * (maxJoystickValue + 1) / totalRotationalRangeInPi
 private let tolerance = joystickValuePerRotation / 2
+
 
 
 final class ViewController: UIViewController {
@@ -29,15 +31,14 @@ final class ViewController: UIViewController {
 
     private var yaw = 0.0 {
         didSet {    // Calculate scaled yaw
-            let doubleValue = Double(joystickValuePerRotation) * (yaw + M_PI) / (2 * M_PI)
-            let cappedValue = min(maxJoystickValue, max(0, Int(round(doubleValue))))
-            if scaledYaw != cappedValue {
-                scaledYaw = cappedValue
+            let scaledYaw = Int(Double(joystickValuePerRotation) * yaw / (2 * M_PI))
+            if self.scaledYaw != scaledYaw {
+                self.scaledYaw = scaledYaw
             }
         }
     }
-    private var joystickOffset = 0
-    private var scaledYaw = (maxJoystickValue + 1) / 2 {
+    private var joystickOffset = midJoystickValue
+    private var scaledYaw = 0 {
         willSet {   // Adjust offset
             let delta = newValue - scaledYaw
 
@@ -61,7 +62,7 @@ final class ViewController: UIViewController {
             self.joystickX = joystickX
         }
     }
-    private var joystickX = 0 {
+    private var joystickX = midJoystickValue {
         didSet {    // Send as value as midi
             if (joystickX == oldValue) { return }
 
@@ -98,8 +99,8 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func zero() {
-        joystickOffset = -scaledYaw
-        joystickX = 0
+        joystickOffset = midJoystickValue - scaledYaw
+        joystickX = midJoystickValue
     }
 
 }
