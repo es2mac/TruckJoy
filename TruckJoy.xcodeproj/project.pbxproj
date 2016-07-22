@@ -12,6 +12,10 @@
 		DAC7F8E61D41EC6C00516118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F8E41D41EC6C00516118 /* Main.storyboard */; };
 		DAC7F8E81D41EC6C00516118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F8E71D41EC6C00516118 /* Assets.xcassets */; };
 		DAC7F8EB1D41EC6C00516118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F8E91D41EC6C00516118 /* LaunchScreen.storyboard */; };
+		DAC7F8FD1D425FFA00516118 /* PGMidi.mm in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F8F81D425FFA00516118 /* PGMidi.mm */; };
+		DAC7F8FE1D425FFA00516118 /* PGMidiAllSources.mm in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F8FA1D425FFA00516118 /* PGMidiAllSources.mm */; };
+		DAC7F8FF1D425FFA00516118 /* PGMidiFind.mm in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F8FC1D425FFA00516118 /* PGMidiFind.mm */; };
+		DAC7F9011D4260F300516118 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC7F9001D4260F300516118 /* CoreMIDI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,16 @@
 		DAC7F8E71D41EC6C00516118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAC7F8EA1D41EC6C00516118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAC7F8EC1D41EC6C00516118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC7F8F51D425FFA00516118 /* iOSVersionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSVersionDetection.h; sourceTree = "<group>"; };
+		DAC7F8F61D425FFA00516118 /* PGArc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGArc.h; sourceTree = "<group>"; };
+		DAC7F8F71D425FFA00516118 /* PGMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidi.h; sourceTree = "<group>"; };
+		DAC7F8F81D425FFA00516118 /* PGMidi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidi.mm; sourceTree = "<group>"; };
+		DAC7F8F91D425FFA00516118 /* PGMidiAllSources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiAllSources.h; sourceTree = "<group>"; };
+		DAC7F8FA1D425FFA00516118 /* PGMidiAllSources.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiAllSources.mm; sourceTree = "<group>"; };
+		DAC7F8FB1D425FFA00516118 /* PGMidiFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMidiFind.h; sourceTree = "<group>"; };
+		DAC7F8FC1D425FFA00516118 /* PGMidiFind.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PGMidiFind.mm; sourceTree = "<group>"; };
+		DAC7F9001D4260F300516118 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		DAC7F9021D42635C00516118 /* TruckJoy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TruckJoy-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC7F9011D4260F300516118 /* CoreMIDI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +75,26 @@
 				DAC7F8E71D41EC6C00516118 /* Assets.xcassets */,
 				DAC7F8E91D41EC6C00516118 /* LaunchScreen.storyboard */,
 				DAC7F8EC1D41EC6C00516118 /* Info.plist */,
+				DAC7F9021D42635C00516118 /* TruckJoy-Bridging-Header.h */,
+				DAC7F8F41D425FFA00516118 /* PGMidi */,
 			);
 			path = TruckJoy;
+			sourceTree = "<group>";
+		};
+		DAC7F8F41D425FFA00516118 /* PGMidi */ = {
+			isa = PBXGroup;
+			children = (
+				DAC7F9001D4260F300516118 /* CoreMIDI.framework */,
+				DAC7F8F51D425FFA00516118 /* iOSVersionDetection.h */,
+				DAC7F8F61D425FFA00516118 /* PGArc.h */,
+				DAC7F8F71D425FFA00516118 /* PGMidi.h */,
+				DAC7F8F81D425FFA00516118 /* PGMidi.mm */,
+				DAC7F8F91D425FFA00516118 /* PGMidiAllSources.h */,
+				DAC7F8FA1D425FFA00516118 /* PGMidiAllSources.mm */,
+				DAC7F8FB1D425FFA00516118 /* PGMidiFind.h */,
+				DAC7F8FC1D425FFA00516118 /* PGMidiFind.mm */,
+			);
+			path = PGMidi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC7F8E31D41EC6C00516118 /* ViewController.swift in Sources */,
+				DAC7F8FD1D425FFA00516118 /* PGMidi.mm in Sources */,
+				DAC7F8FE1D425FFA00516118 /* PGMidiAllSources.mm in Sources */,
 				DAC7F8E11D41EC6C00516118 /* AppDelegate.swift in Sources */,
+				DAC7F8FF1D425FFA00516118 /* PGMidiFind.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +289,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mathemusician.TruckJoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckJoy/TruckJoy-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -264,6 +302,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.mathemusician.TruckJoy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckJoy/TruckJoy-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -286,6 +326,7 @@
 				DAC7F8F11D41EC6C00516118 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
