@@ -14,24 +14,46 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8li-8U-NJn">
-                                <rect key="frame" x="20" y="72" width="355" height="546"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUP-Uv-74z">
-                                <rect key="frame" x="20" y="626" width="32" height="30"/>
-                                <state key="normal" title="Zero"/>
-                                <connections>
-                                    <action selector="zero" destination="BYZ-38-t0r" eventType="touchUpInside" id="IPx-yi-HZW"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-S3-fnD" userLabel="Centering Area View">
+                                <rect key="frame" x="0.0" y="64" width="667" height="311"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="X9B-Pi-b2A">
+                                        <rect key="frame" x="187" y="51" width="293" height="209"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xAxis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8li-8U-NJn" userLabel="xAxis Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="153"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="128"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUP-Uv-74z">
+                                                <rect key="frame" x="0.0" y="161" width="293" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="Zero"/>
+                                                <connections>
+                                                    <action selector="zero" destination="BYZ-38-t0r" eventType="touchUpInside" id="IPx-yi-HZW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="X9B-Pi-b2A" firstAttribute="centerX" secondItem="gJ9-S3-fnD" secondAttribute="centerX" id="25e-4g-tK2"/>
+                                    <constraint firstItem="X9B-Pi-b2A" firstAttribute="centerY" secondItem="gJ9-S3-fnD" secondAttribute="centerY" id="aJ0-ZN-BhS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gJ9-S3-fnD" secondAttribute="trailing" id="7TH-yF-5nS"/>
+                            <constraint firstItem="gJ9-S3-fnD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFl-ux-07L"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gJ9-S3-fnD" secondAttribute="bottom" id="XUi-oi-Skv"/>
+                            <constraint firstItem="gJ9-S3-fnD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="adK-Gb-Idq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="00T-PM-ABk">
                         <barButtonItem key="rightBarButtonItem" title="Connect" id="Dgd-Vr-wdg">
@@ -53,6 +75,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ve6-Z9-vOI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ak-t5-Cqw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -65,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehX-NL-47m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="1038"/>
+            <point key="canvasLocation" x="-94.5" y="1037.5"/>
         </scene>
     </scenes>
 </document>
