@@ -38,7 +38,7 @@ At this point you're getting MIDI message on the Mac sent from iOS.  The last su
 
 With El Capitan, it's not a simple task to create a virtual HID.  ControllerMate does it for you and more.  ControllerMate listens to all the MIDI messages, and you can visually program it to map the MIDI messages to virtual joystick output axes.
 
-![ControllerMate](controllermate.png)
+![ControllerMate](controllermate2.png)
 
 At first I split the joystick value (0~4095) as two notes (C3 & C4) and re-combine them, as shown in the top half, since a note's velocity is only 7-bit.  Later it was changed to use the 14-bit modulation wheel instead.  By the way, I've been using ControllerMate since 2007 and it's one of my favorite application of all time.
 
