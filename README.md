@@ -40,7 +40,7 @@ With El Capitan, it's not a simple task to create a virtual HID.  ControllerMate
 
 ![ControllerMate](controllermate.png)
 
-By the way, I've been using ControllerMate since 2007 and it's one of my favorite application of all time.
+At first I split the joystick value (0~4095) as two notes (C3 & C4) and re-combine them, as shown in the top half, since a note's velocity is only 7-bit.  Later it was changed to use the 14-bit modulation wheel instead.  By the way, I've been using ControllerMate since 2007 and it's one of my favorite application of all time.
 
 ### Demo
 
@@ -50,4 +50,4 @@ Here's [me driving a truck with an iPad Pro as the steering wheel].
 
 [PGMidi]: https://github.com/petegoodliffe/PGMidi
 [ControllerMate]: http://www.controllermate.com
-[me driving with an iPad Pro as the steering wheel]: https://www.youtube.com/watch?v=sD6ko1-xa88
+[me driving a truck with an iPad Pro as the steering wheel]: https://www.youtube.com/watch?v=sD6ko1-xa88
