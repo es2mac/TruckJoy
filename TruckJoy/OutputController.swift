@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol OutputController {
 
     func updateWithYaw(yaw: Double)

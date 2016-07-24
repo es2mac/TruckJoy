@@ -9,7 +9,10 @@
 import Foundation
 
 
-final class MidiController: NSObject, MidiHandler {
+/**
+ Light wrapper class around PGMidi
+ */
+final class MidiController: NSObject {
     
     
     private let midi: PGMidi
@@ -24,6 +27,11 @@ final class MidiController: NSObject, MidiHandler {
     convenience override init() {
         self.init(midi: PGMidi())
     }
+
+}
+
+
+extension MidiController: MidiMessageHandling {
 
     func send(messages: [MidiMessage]) {
         let bytes = messages.flatMap { $0.bytes }

@@ -58,10 +58,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAC734531D44950D00DE761C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC7F8EC1D41EC6C00516118 /* Info.plist */,
+				DAC7F8E71D41EC6C00516118 /* Assets.xcassets */,
+				DAC7F9021D42635C00516118 /* TruckJoy-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		DAC7F8D41D41EC6C00516118 = {
 			isa = PBXGroup;
 			children = (
 				DAC7F8DF1D41EC6C00516118 /* TruckJoy */,
+				DAC7F8F41D425FFA00516118 /* PGMidi */,
 				DAC7F8DE1D41EC6C00516118 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,14 +92,11 @@
 				DAC7F8E21D41EC6C00516118 /* ViewController.swift */,
 				DAAAF4231D434FD000EF9FCC /* OutputController.swift */,
 				DAAAF4251D43515900EF9FCC /* JoystickController.swift */,
-				DA08804C1D42C38300C77E7A /* MidiController.swift */,
 				DAAAF4271D435AC400EF9FCC /* MidiCommon.swift */,
+				DA08804C1D42C38300C77E7A /* MidiController.swift */,
 				DAC7F8E41D41EC6C00516118 /* Main.storyboard */,
-				DAC7F8E71D41EC6C00516118 /* Assets.xcassets */,
 				DAC7F8E91D41EC6C00516118 /* LaunchScreen.storyboard */,
-				DAC7F8EC1D41EC6C00516118 /* Info.plist */,
-				DAC7F9021D42635C00516118 /* TruckJoy-Bridging-Header.h */,
-				DAC7F8F41D425FFA00516118 /* PGMidi */,
+				DAC734531D44950D00DE761C /* Supporting Files */,
 			);
 			path = TruckJoy;
 			sourceTree = "<group>";
@@ -106,7 +114,8 @@
 				DAC7F8FB1D425FFA00516118 /* PGMidiFind.h */,
 				DAC7F8FC1D425FFA00516118 /* PGMidiFind.mm */,
 			);
-			path = PGMidi;
+			name = PGMidi;
+			path = TruckJoy/PGMidi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

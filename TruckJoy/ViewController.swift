@@ -42,16 +42,17 @@ final class ViewController: UIViewController {
     }
 
     private func startMotionUpdates() {
-        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(.XArbitraryCorrectedZVertical, toQueue: .mainQueue()) { [weak self] (motion: CMDeviceMotion?, error: NSError?) in
-            guard let yaw = motion?.attitude.yaw else { return }
-
-            self?.outputController.updateWithYaw(yaw)
-
-            self?.debugDisplay()
-        }
+        motionManager.startDeviceMotionUpdatesUsingReferenceFrame(.XArbitraryCorrectedZVertical,
+                                                                  toQueue: .mainQueue())
+        { [weak self] (motion, _) in self?.updateWithMotion(motion) }
     }
 
-    private func debugDisplay() {
+    private func updateWithMotion(motion: CMDeviceMotion?) {
+        guard let yaw = motion?.attitude.yaw else { return }
+
+        self.outputController.updateWithYaw(yaw)
+        
+        // Debug display
         if let joystickController = outputController as? JoystickController {
             label.text = "\(joystickController.xAxis)"
         }
