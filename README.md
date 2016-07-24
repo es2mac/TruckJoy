@@ -26,7 +26,7 @@ Turns out this is extremely easy.  Just present a _CABTMIDILocalPeripheralViewCo
 
 Bonus feature of communicating via Bluetooth MIDI is its low latency.
 
-### Sending motion data as MIDI message
+### Sending Motion Data as MIDI Message
 
 Core MIDI is a pain to use because of its C API, and usig Swift only make it harder.
 
