@@ -14,11 +14,17 @@ import CoreAudioKit
 final class ViewController: UIViewController {
 
 
-    @IBOutlet var label: UILabel!
+    @IBOutlet var label: UILabel! {
+        didSet {
+            label.font = UIFont.monospacedDigitSystemFontOfSize(label.font.pointSize, weight: UIFontWeightRegular)
+        }
+    }
 
 
     var motionManager:    CMMotionManager!
     var outputController: OutputController!
+
+    var referenceAttitude: CMAttitude?
 
 
     override func viewDidLoad() {
@@ -48,9 +54,13 @@ final class ViewController: UIViewController {
     }
 
     private func updateWithMotion(motion: CMDeviceMotion?) {
-        guard let yaw = motion?.attitude.yaw else { return }
+        guard let attitude = motion?.attitude else { return }
 
-        self.outputController.updateWithYaw(yaw)
+        // Adjust for calibration
+        if referenceAttitude == nil { referenceAttitude = attitude }
+        attitude.multiplyByInverseOfAttitude(referenceAttitude!)
+
+        self.outputController.updateWithRotation(attitude.yaw)
         
         // Debug display
         if let joystickController = outputController as? JoystickController {
@@ -64,6 +74,7 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func zero() {
+        referenceAttitude = nil
         outputController.reset()
     }
 

@@ -17,7 +17,7 @@ private let tolerance                = xValuePerRotation / 2
 
 
 /**
- The `JoystickController` class is an output controller that converts device rotation (yaw)
+ The `JoystickController` class is an output controller that converts device rotation
  to a joystick's X-axis, and send it as a MIDI modulation wheel message.
  */
 final class JoystickController {
@@ -35,18 +35,18 @@ final class JoystickController {
     }
 
 
-    private let midiHandler: MidiMessageHandling
+    private let midiHandler: MIDIMessageHandling
 
-    private var scaledYaw = 0
-    private var xOffset   = midXAxis
+    private var scaledRotation = 0
+    private var xOffset        = midXAxis
 
 
-    init(midiHandler: MidiMessageHandling) {
+    init(midiHandler: MIDIMessageHandling) {
         self.midiHandler = midiHandler
     }
 
     convenience init() {
-        self.init(midiHandler: MidiController())
+        self.init(midiHandler: MIDIController())
     }
 
 }
@@ -54,10 +54,10 @@ final class JoystickController {
 
 extension JoystickController: OutputController {
 
-    func updateWithYaw(yaw: Double) {
-        let newScaledYaw = Int(round(Double(xValuePerRotation) * yaw / (2 * M_PI)))
-        let change       = newScaledYaw - scaledYaw
-        scaledYaw        = newScaledYaw
+    func updateWithRotation(rotation: Double) {
+        let newScaledRotation = Int(round(Double(xValuePerRotation) * rotation / (2 * M_PI)))
+        let change            = newScaledRotation - scaledRotation
+        scaledRotation        = newScaledRotation
 
         guard change != 0 else { return }
 
@@ -70,12 +70,12 @@ extension JoystickController: OutputController {
         }
 
         // Calculate X-axis
-        xAxis = min(max(scaledYaw + xOffset, 0), maxXAxis)
+        xAxis = min(max(scaledRotation + xOffset, 0), maxXAxis)
     }
 
     func reset() {
         xAxis   = midXAxis
-        xOffset = xAxis - scaledYaw     // xAxis = scaledYaw + xOffset
+        xOffset = xAxis - scaledRotation     // xAxis = scaledRotation + xOffset
     }
 
 }

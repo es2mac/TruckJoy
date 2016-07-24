@@ -1,5 +1,5 @@
 //
-//  MidiController.swift
+//  MIDIController.swift
 //  TruckJoy
 //
 //  Created by Paul on 7/23/16.
@@ -12,10 +12,18 @@ import Foundation
 /**
  Light wrapper class around PGMidi
  */
-final class MidiController: NSObject {
+final class MIDIController: NSObject {
     
     
     private let midi: PGMidi
+
+    // Running status, just to be sure, reset every 32th message
+    private var lastStatusByte: UInt8?
+    private var runningCounter = 0 {
+        didSet {
+            if runningCounter >= 32 { lastStatusByte = nil; runningCounter = 0 }
+        }
+    }
 
 
     init(midi: PGMidi) {
@@ -31,17 +39,34 @@ final class MidiController: NSObject {
 }
 
 
-extension MidiController: MidiMessageHandling {
+extension MIDIController: MIDIMessageHandling {
 
-    func send(messages: [MidiMessage]) {
-        let bytes = messages.flatMap { $0.bytes }
+    func send(messages: [MIDIMessage]) {
+
+        // Optimize for MIDI running status
+        var bytes = [UInt8]()
+
+        for message in messages {
+            var rawBytes = message.bytes
+
+            if let byte = lastStatusByte where byte == rawBytes.first {
+                rawBytes.removeFirst()
+                runningCounter += 1
+            }
+            else {
+                lastStatusByte = rawBytes.first
+            }
+
+            bytes += rawBytes
+        }
+
         midi.sendBytes(bytes, size: UInt32(bytes.count * sizeof(UInt8)))
     }
 
 }
 
 
-extension MidiController: PGMidiDelegate {
+extension MIDIController: PGMidiDelegate {
     
     func midi(midi: PGMidi!, sourceAdded source: PGMidiSource!) {
         print(#function)

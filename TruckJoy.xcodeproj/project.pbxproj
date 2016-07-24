@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA08804D1D42C38300C77E7A /* MidiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08804C1D42C38300C77E7A /* MidiController.swift */; };
+		DA08804D1D42C38300C77E7A /* MIDIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA08804C1D42C38300C77E7A /* MIDIController.swift */; };
 		DAAAF4241D434FD000EF9FCC /* OutputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAAF4231D434FD000EF9FCC /* OutputController.swift */; };
 		DAAAF4261D43515900EF9FCC /* JoystickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAAF4251D43515900EF9FCC /* JoystickController.swift */; };
-		DAAAF4281D435AC400EF9FCC /* MidiCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAAF4271D435AC400EF9FCC /* MidiCommon.swift */; };
+		DAAAF4281D435AC400EF9FCC /* MIDICommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAAF4271D435AC400EF9FCC /* MIDICommon.swift */; };
 		DAC7F8E11D41EC6C00516118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F8E01D41EC6C00516118 /* AppDelegate.swift */; };
 		DAC7F8E31D41EC6C00516118 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7F8E21D41EC6C00516118 /* ViewController.swift */; };
 		DAC7F8E61D41EC6C00516118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC7F8E41D41EC6C00516118 /* Main.storyboard */; };
@@ -23,10 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA08804C1D42C38300C77E7A /* MidiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiController.swift; sourceTree = "<group>"; };
+		DA08804C1D42C38300C77E7A /* MIDIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIController.swift; sourceTree = "<group>"; };
 		DAAAF4231D434FD000EF9FCC /* OutputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputController.swift; sourceTree = "<group>"; };
 		DAAAF4251D43515900EF9FCC /* JoystickController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickController.swift; sourceTree = "<group>"; };
-		DAAAF4271D435AC400EF9FCC /* MidiCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiCommon.swift; sourceTree = "<group>"; };
+		DAAAF4271D435AC400EF9FCC /* MIDICommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDICommon.swift; sourceTree = "<group>"; };
 		DAC7F8DD1D41EC6C00516118 /* TruckJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC7F8E01D41EC6C00516118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAC7F8E21D41EC6C00516118 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 				DAC7F8E21D41EC6C00516118 /* ViewController.swift */,
 				DAAAF4231D434FD000EF9FCC /* OutputController.swift */,
 				DAAAF4251D43515900EF9FCC /* JoystickController.swift */,
-				DAAAF4271D435AC400EF9FCC /* MidiCommon.swift */,
-				DA08804C1D42C38300C77E7A /* MidiController.swift */,
+				DAAAF4271D435AC400EF9FCC /* MIDICommon.swift */,
+				DA08804C1D42C38300C77E7A /* MIDIController.swift */,
 				DAC7F8E41D41EC6C00516118 /* Main.storyboard */,
 				DAC7F8E91D41EC6C00516118 /* LaunchScreen.storyboard */,
 				DAC734531D44950D00DE761C /* Supporting Files */,
@@ -195,8 +195,8 @@
 				DAC7F8E11D41EC6C00516118 /* AppDelegate.swift in Sources */,
 				DAC7F8FF1D425FFA00516118 /* PGMidiFind.mm in Sources */,
 				DAAAF4241D434FD000EF9FCC /* OutputController.swift in Sources */,
-				DA08804D1D42C38300C77E7A /* MidiController.swift in Sources */,
-				DAAAF4281D435AC400EF9FCC /* MidiCommon.swift in Sources */,
+				DA08804D1D42C38300C77E7A /* MIDIController.swift in Sources */,
+				DAAAF4281D435AC400EF9FCC /* MIDICommon.swift in Sources */,
 				DAAAF4261D43515900EF9FCC /* JoystickController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

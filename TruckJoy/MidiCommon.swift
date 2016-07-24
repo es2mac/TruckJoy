@@ -1,5 +1,5 @@
 //
-//  MidiCommon.swift
+//  MIDICommon.swift
 //  TruckJoy
 //
 //  Created by Paul on 7/23/16.
@@ -19,12 +19,12 @@ import Foundation
          .noteOn(.C3, velocity: 127),
          .noteOff(.key(42), velocity: 0)])
  */
-protocol MidiMessageHandling {
-    func send(messages: Array<MidiMessage>)
+protocol MIDIMessageHandling {
+    func send(messages: Array<MIDIMessage>)
 }
 
-extension MidiMessageHandling {
-    func send(midiMessage: MidiMessage) {
+extension MIDIMessageHandling {
+    func send(midiMessage: MIDIMessage) {
         send( [midiMessage] )
     }
 }
@@ -33,7 +33,7 @@ extension MidiMessageHandling {
 /**
  Formalized MIDI message specification
  */
-enum MidiMessage {
+enum MIDIMessage {
 
 
     /// Complete list of MIDI notes (0~127)
@@ -63,6 +63,7 @@ enum MidiMessage {
     case modulationWheel(Int)
 
 
+    /// Plain bytes for the MIDI message, always starts with a status byte
     var bytes: [UInt8] {
         switch self {
         case .noteOn(let note, velocity: let velocity):

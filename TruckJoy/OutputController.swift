@@ -11,7 +11,7 @@ import Foundation
 
 protocol OutputController {
 
-    func updateWithYaw(yaw: Double)
+    func updateWithRotation(Rotation: Double)
     func reset()
 
 }
