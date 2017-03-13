@@ -28,7 +28,7 @@ Bonus feature of communicating via Bluetooth MIDI is its low latency.
 
 ### Sending Motion Data as MIDI Message
 
-Core MIDI is a pain to use because of its C API, and usig Swift only make it harder.
+Core MIDI is a pain to use because of its C API, and using Swift only makes it harder.
 
 Fortunately with the _[PGMidi]_ library it's again fairly painless.  Though, some understanding of MIDI is required here.
 
